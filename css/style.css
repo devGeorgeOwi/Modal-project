@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
-* {
+/** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-}
+}*/
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* background image */
@@ -37,26 +41,56 @@ body {
   top: 0;
   width: 100%; 
   height: 100%; 
-  overflow: auto; 
-  transition: all 0.35s ease-in;
+  overflow: hidden; 
+  transition: all 1s ease-out;
+  transform: translate3d(0, 0, 0);
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 200px;
-  border-radius: 10px;
-  border: 1px solid #888;
-  width: 80%;
+    background-color: #fefefe;
+    margin-left: 230px;
+    padding: 100px;
+    border-radius: 10px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 60px;
 }
-
+.modal-content h2 {
+    margin-top: -32px;
+    text-align: center;
+    color: #585b6b;
+}
+.modal-content input {
+  width: 50%;
+  padding: 10px;
+  margin-left: 46px;
+  border-radius: 16px;
+  outline: none;
+  
+}
+.modal-content button {
+  width: 20%;
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 10px;
+  outline: none;
+  background: transparent;
+    border: 2px solid #ffc107;  
+}
+.modal-content button:hover,
+.modal-content button:focus {
+  cursor: pointer;
+  background: #ffc107;
+}
 /* Modal Button */
 .modal-wrapper {
   display: flex;
   justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 .myBtn {
   margin-top: -300px;
@@ -78,10 +112,11 @@ body {
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: -80px -60px 0 0;
 }
 
 .close:hover,
@@ -89,4 +124,30 @@ body {
   color: #ffc107;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    align-content: center;
+    margin-left: 45px;
+  }
+  .modal-content input {
+    width: 70%;
+    margin-left: 20px;
+  }
+  .modal-content button {
+    margin-left: 55px;
+    margin-top: 10px;
+    padding: 10px 30px;
+    width: 50%;
+  }    
+}
+
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+
 }
